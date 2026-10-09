@@ -1,56 +1,35 @@
-package Controller;
+package controller;
 
-import java.util.ArrayList;
+import Controller.ObatDAO;
 import Model.Obat;
+import java.util.ArrayList;
 
 public class ManajemenStok {
-    private ArrayList<Obat> daftarObat = new ArrayList<>();
+    private final ObatDAO obatDAO = new ObatDAO();
 
     public boolean tambahObat(Obat obat) {
-        return daftarObat.add(obat);
+        return obatDAO.tambahObat(obat);
     }
     
     public ArrayList<Obat> getSemuaObat() {
-        return daftarObat;
+        return obatDAO.getSemuaObat();
     }
 
     // Overloading 1: Mengubah seluruh informasi obat
     public boolean updateObat(String id, String namaBaru, int stokBaru, double hargaBaru) {
-        Obat o = cariObatById(id);
-        if (o != null) {
-            o.setNamaObat(namaBaru);
-            o.setStok(stokBaru);
-            o.setHarga(hargaBaru);
-            return true;
-        }
-        return false;
+        return obatDAO.updateObat(id, namaBaru, stokBaru, hargaBaru);
     }
-
+    
     // Overloading 2: Hanya untuk menambah stok obat (Restock)
     public boolean updateObat(String id, int tambahanStok) {
-        Obat o = cariObatById(id);
-        if (o != null) {
-            o.setStok(o.getStok() + tambahanStok);
-            return true;
-        }
-        return false;
+        return obatDAO.updateStokObat(id, tambahanStok);
     }
 
     public boolean hapusObat(String id) {
-        Obat o = cariObatById(id);
-        if (o != null) {
-            daftarObat.remove(o);
-            return true;
-        }
-        return false;
+        return obatDAO.hapusObat(id);
     }
 
     public Obat cariObatById(String id) {
-        for (Obat o : daftarObat) {
-            if (o.getIdObat().equalsIgnoreCase(id)) {
-                return o;
-            }
-        }
-        return null;
+        return obatDAO.cariObatById(id);
     }
 }

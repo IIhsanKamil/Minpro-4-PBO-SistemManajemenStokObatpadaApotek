@@ -1,8 +1,11 @@
+Controller\ObatDAO.class
+config\TesKoneksi.class
 Model\ObatResep.class
 Model\InfoObat.class
 Model\ObatBebas.class
 View\MainView.class
 Controller\ManajemenStok.class
+config\KoneksiDatabase.class
 Main\Main.class
 Model\Obat.class
 Utils\ValidasiInput.class

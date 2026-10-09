@@ -8,6 +8,10 @@ public class ObatResep extends Obat {
         this.namaDokter = namaDokter;
     }
 
+    public String getNamaDokter() {
+        return namaDokter;
+    }
+
     @Override
     public String getKategoriString() {
         return "Obat Keras";

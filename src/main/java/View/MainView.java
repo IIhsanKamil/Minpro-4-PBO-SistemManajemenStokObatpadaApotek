@@ -1,6 +1,6 @@
 package View;
 
-import Controller.ManajemenStok;
+import controller.ManajemenStok;
 import Model.Obat;
 import Model.ObatBebas;
 import Model.ObatResep;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainView {
-    private final ManajemenStok app; // Menggunakan final karena referensi objek tidak akan diubah
+    private final ManajemenStok app;
     private final Scanner scanner;
 
     public MainView(ManajemenStok app) {

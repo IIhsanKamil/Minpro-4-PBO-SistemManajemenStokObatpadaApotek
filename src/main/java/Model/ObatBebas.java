@@ -7,7 +7,10 @@ public class ObatBebas extends Obat {
         super(idObat, namaObat, stok, harga);
         this.efekSamping = efekSamping;
     }
-
+    
+    public String getEfekSamping() {
+        return efekSamping;
+    }
     @Override
     public String getKategoriString() {
         return "Obat Bebas";
